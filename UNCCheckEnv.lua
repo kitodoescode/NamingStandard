@@ -163,7 +163,7 @@ end)
 test("getcallingscript", {})
 
 test("getscriptclosure", {"getscriptfunction"}, function()
-	local module = game:GetService("CoreGui").RobloxGui.Modules.Common.CommonUtil -- Common.Constants removed
+	local module = game:GetService("CoreGui").RobloxGui.RobloxGui.Modules.Common.CommonUtil -- Common.Constants removed
 	local constants = getrenv().require(module)
 	local generated = getscriptclosure(module)()
 	assert(constants ~= generated, "Generated module should not match the original")
@@ -869,4 +869,5 @@ test("WebSocket.connect", {}, function()
 	end
 	ws:Close()
 end)
+
 
